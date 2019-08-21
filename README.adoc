@@ -1,6 +1,6 @@
 :toc2:
 
-== Windows Integration
+== Windows Automation
 
 .To run 
 
