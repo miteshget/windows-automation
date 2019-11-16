@@ -1,5 +1,5 @@
 [windows]
-ad1.38b4.internal 
+ad1 ansible_host=ad1.{{guid}}.internal 
 
 [windows:vars]
 ansible_connection=winrm
