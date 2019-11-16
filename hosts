@@ -1,0 +1,9 @@
+[windows]
+ad1.38b4.internal 
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=Administrator
+ansible_winrm_server_cert_validation=ignore
+ansible_become=false
+ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
