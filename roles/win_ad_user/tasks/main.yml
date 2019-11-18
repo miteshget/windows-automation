@@ -15,5 +15,5 @@
     password: "{{ item.password }}"
     groups: "{{ item.group_name }}"
     state: present
-    email: '"{{ item.name }}"@{{GUID}}.example.opentlc.com'
+    email: '"{{ item.name }}"@example.opentlc.com'
   loop: "{{ user_info }}"
