@@ -1,0 +1,15 @@
+Define following variables
+==========================
+|---
+ad_domain_name: "String" | Domain name 
+ad_domain_name_netbios: "String" | Netbios name
+ad_safe_mode_password: "String" | password 
+|---
+
+.Sample example
+[source,textinfo]
+----
+ad_domain_name: ad1.849b.example.opentlc.com
+ad_domain_name_netbios: AD1
+ad_safe_mode_password: redhat123
+----
