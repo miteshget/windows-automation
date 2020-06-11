@@ -3,9 +3,9 @@ Define following variables
 Following are varibles which needs to be defined in order to use this role
 
 |===
-ad_domain_name: "String" | Domain name 
-ad_domain_name_netbios: "String" | Netbios name
-ad_safe_mode_password: "String" | password 
+|ad_domain_name: "String" | Domain name 
+|ad_domain_name_netbios: "String" | Netbios name
+|ad_safe_mode_password: "String" | password 
 |===
 
 .Sample example
