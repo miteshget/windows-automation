@@ -5,16 +5,29 @@
     include_management_tools: yes
     include_sub_features: yes
 
-- name: Setup Active Directory Controller
-  win_domain:
-    dns_domain_name: "{{ ad_domain_name }}"
-    safe_mode_password: "{{ ad_safe_mode_password }}"
-  register: active_directory_controllers
-
-- name: Reboot once DC created
-  win_reboot:
-  when: active_directory_controllers.reboot_required
-
+- name: Setup Active Directory Controller in Windows 2012 Std or lower
+	when: ansible_distribution_version <= "6.2.9200.0"
+	block:
+ 		- name: Copy the PS script to install the AD forest
+      win_template:
+        src: InstallADForest.ps1.j2
+        dest: c:\InstallADForest.ps1
+    - name: Execute the PS script to install the AD forest
+      win_shell: c:\InstallADForest.ps1 >> C:\InstallADForest.txt
+	
+- name: Setup Active Directory Controller in Windows 2012R2 or higher
+	when: ansible_distribution_version > "6.2.9200.0"
+	block:
+		- name: Setup Active Directory Controller
+		  win_domain:
+		    dns_domain_name: "{{ ad_domain_name }}"
+		    safe_mode_password: "{{ ad_safe_mode_password }}"
+		  register: active_directory_controllers
+		
+		- name: Reboot once DC created
+		  win_reboot:
+		  when: active_directory_controllers.reboot_required
+		
 - name: List Domain Controllers in domain
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
   register: domain_list
