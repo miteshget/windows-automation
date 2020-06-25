@@ -24,9 +24,9 @@
         safe_mode_password: "{{ ad_safe_mode_password }}"
       register: active_directory_controllers
 
-- name: Reboot once DC created
-  win_reboot:
-  #when: active_directory_controllers.reboot_required
+    - name: Reboot once DC created
+      win_reboot:
+      when: active_directory_controllers.reboot_required
 
 - name: List Domain Controllers in domain
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
