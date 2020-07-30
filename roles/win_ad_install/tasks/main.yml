@@ -4,6 +4,7 @@
     name: AD-Domain-Services
     include_management_tools: yes
     include_sub_features: yes
+
 - name: Setup Active Directory Controller in Windows 2012 Std or lower
   when: 'ansible_distribution_version <= "6.2.9200.0"'
   block:
