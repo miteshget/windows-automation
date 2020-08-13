@@ -27,7 +27,7 @@
 
     - name: Reboot once DC created
       win_reboot:
-      when: active_directory_controllers.reboot_required
+      when: active_directory_controllers.reboot_required | bool
 
 - name: List Domain Controllers in domain
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
