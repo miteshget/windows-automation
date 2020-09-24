@@ -13,5 +13,5 @@ Following are varibles which needs to be defined in order to use this role
 ----
 ad_domain_name: ad1.849b.example.opentlc.com
 ad_domain_name_netbios: AD1
-ad_safe_mode_password: Redhat@123
+ad_safe_mode_password: Redhat@12345
 ----
