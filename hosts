@@ -1,5 +1,5 @@
 [windows]
-ad1 ansible_host=ad1.{{GUID}}.{{ DOMAIN }}
+ad1 ansible_host=ad1.d6a0.example.opentlc.com
 
 [windows:vars]
 ansible_connection=winrm
